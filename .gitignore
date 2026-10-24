@@ -9,9 +9,11 @@ wheels/
 # Virtual environments
 .venv
 .env
+.env.example
 chroma.sqlite3
 header.
 length.bin
 link_lists.bin
 header.bin
 data_level0.bin
+.pytest_cache

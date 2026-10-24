@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "fastapi>=0.162.0",
     "langchain>=1.4.6",
     "langchain-anthropic>=1.7.6",
     "langchain-chroma>=1.1.0",
@@ -15,6 +16,7 @@ dependencies = [
     "ollama>=0.6.3",
     "pypdf>=6.21.1",
     "python-dotenv>=1.2.4",
+    "slowapi>=0.1.10",
 ]
 
 [dependency-groups]
