@@ -128,13 +128,16 @@ def demo_rag_with_source():
 
     def format_docs_with_metadata(docs):
         formatted = []
-        for i,doc in enumerate(docs):
+        for i, doc in enumerate(docs):
             source = doc.metadata.get("source", "unknown")
             formatted.append(f"[Document {i+1}: {source}]\n{doc.page_content}")
         return "\n\n".join(formatted)
 
     rag_chain = (
-        {"context": retriever | format_docs_with_metadata, "question": RunnablePassthrough()}
+        {
+            "context": retriever | format_docs_with_metadata,
+            "question": RunnablePassthrough(),
+        }
         | prompt
         | llm
         | StrOutputParser()
@@ -144,9 +147,8 @@ def demo_rag_with_source():
     answer = rag_chain.invoke("What are the core components of LangChain?")
     print(f"Q: What are the core components?\n")
     print(f"A: {answer}")
-    
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     # demo_basic_rag()
     demo_rag_with_source()
